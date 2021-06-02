@@ -17,6 +17,7 @@ mysqli_close($conn);
 <?php
 #
 $linea = 0;
+$otro= 0;
 
 $archivo = fopen("NÓMINA_EMPLEADOS.csv","r");
 while (($datoa= fgetcav($archivo,";"))== true){
