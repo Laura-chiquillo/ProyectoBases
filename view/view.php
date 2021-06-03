@@ -1,36 +1,28 @@
 <?php 
 
 // conexión
-$mysqli = @new mysqli('localhost',"laura","tisoruno123", "proyecto");
-
-if (isset($_POST['enviar']))
-{
+$connect = @new mysqli("localhost","root","", "proyecto");
+//$connect = new mysqli("localhost", "laura", "tisoruno123", "proyecto") or die('Error al conectar'. mysqli_errno($connect));
+if (isset($_POST['enviar'])){
 	
   $filename=$_FILES["file"]["name"];
   $info = new SplFileInfo($filename);
   $extension = pathinfo($info->getFilename(), PATHINFO_EXTENSION);
 
-   if($extension == 'csv')
-   {
+   if($extension == 'csv')   {
 	$filename = $_FILES['file']['tmp_name'];
 	$handle = fopen($filename, "r");
 
-	while( ($data = fgetcsv($handle, 1000, ";") ) !== FALSE )
-	{
-	   $q = "INSERT INTO importacion (codigo, codigoSede, nombres, apellidos, fechaIngreso, sueldo, arl) VALUES (
-        '$data[0]', 
-        '$data[1]',
-        '$data[2]',
-        '$data[3]', 
-        '$data[4]',
-        '$data[5]',
-        '$data[6]'
-    )";
+	while( ($data = fgetcsv($handle, 1000, ";") ) !== FALSE ){
+	   $q = "INSERT INTO importacion (codigo, codigoSede, nombres, apellidos, fechaIngreso, sueldo, arl) VALUES ('$data[0]', 
+        '$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]')";
 
-	$mysqli -> query($q);
-    #echo "se subio";
-        #$mysql_query($q);
-   }
+        echo $q;
+	   $connect->query($q); 
+       if ($connect->query($q)===true) {
+        echo "Sisirvio";
+        }
+    }
 
       fclose($handle);
    }
