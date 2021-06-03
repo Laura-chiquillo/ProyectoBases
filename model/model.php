@@ -1,13 +1,13 @@
 <?php
 
-require "conexion.php";
-$conexion = new mysqli($host,$user,$pass,$baseDatos);
-if($conexion->connect_errno){
-    echo "Error de conexion de la base datos".$conexion->connect_error;
-    exit();
-}
-$sql = "select * from medicos";
-$resultado = $conexion->query($sql);
+$host = "localhost";
+$dbuser = "root";
+$dbpwd = "";
+$db = "proyecto";
 
-$query = "INSERT INTO `empleado` ( `codigo`,`codigoSede`,`nombres`,àpellidos`,`fechaIngreso`,`sueldo`,àrl`"
+$connect = mysql_connect ($host, $dbuser,$dbpwd);
+    if(!$connect)
+        echo ("no se ha conectado a la base de datos");
+    else 
+        $slect = mysql_connect($db);
 ?>

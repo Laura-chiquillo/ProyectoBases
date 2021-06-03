@@ -5,12 +5,14 @@
 <title>INICIO</title>
 </head>
 <body>
-    <!-- seleccionar un archivo-->
-    <form enctype="multipart/form-data" action="" name="form" method="post">
-        Seleccione Archivo
-            <input type="file" name="file" id="file" /></td>
-            <input type="submit" name="submit" id="submit" value="Subir" />
+    <form enctype="multipart/form-data" method="post" action="">
+    CSV File:<input type="file" name="file" id="file">
+    <input type="submit" value="Enviar" name="enviar">
     </form>
+    <?php
+    $control = new Controller();
+    $control -> conectar();
+    ?>
     <h1>
     <table></table>
     </h1>
