@@ -5,6 +5,7 @@
 <title>INICIO</title>
 </head>
 <body>
+    <a  href="login.php"> Login</a> or
     <button type="submit">Enviar</button>
 </body>
 </html>
