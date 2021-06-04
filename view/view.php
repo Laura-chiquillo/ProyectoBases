@@ -18,7 +18,7 @@ if (isset($_POST['enviar'])){
         '$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]')";
 
         echo $q;
-	   $connect->query($q); 
+	   //$connect->query($q); 
        if ($connect->query($q)===true) {
         echo "Sisirvio";
         }
