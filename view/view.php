@@ -14,11 +14,15 @@ if (isset($_POST['enviar'])){
 	$handle = fopen($filename, "r");
 
 	while( ($data = fgetcsv($handle, 1000, ";") ) !== FALSE ){
-	   $q = "INSERT INTO importacion (codigo, codigoSede, nombres, apellidos, fechaIngreso, sueldo, arl) VALUES ('$data[0]', 
-        '$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]')";
+	   $q = "INSERT INTO empleado (codigo, codigoSucursal, nombres, apellidos,dependencia,cargo, fechaIngreso, sueldo) VALUES ('$data[0]', 
+        '$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','$data[7]'); ";
 
         echo $q;
+<<<<<<< HEAD
 	   //$connect->query($q); 
+=======
+	  
+>>>>>>> b8998c16ed889648438d6ba736a3f9e622a5052f
        if ($connect->query($q)===true) {
         echo "Sisirvio";
         }
