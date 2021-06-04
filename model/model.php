@@ -1,13 +1,13 @@
-<?php
+<?php 
 
-$host = "localhost";
-$dbuser = "root";
-$dbpwd = "";
-$db = "proyecto";
+class modelo(){
 
-$connect = mysql_connect ($host, $dbuser,$dbpwd);
-    if(!$connect)
-        echo ("no se ha conectado a la base de datos");
-    else 
-        $slect = mysql_connect($db);
+    public function subirArchivo(){
+        // conexión
+        $connect = @new mysqli("localhost","root","", "proyecto");
+        //$connect = new mysqli("localhost", "laura", "tisoruno123", "proyecto") or die('Error al conectar'. mysqli_errno($connect));
+       
+    }
+}
+
 ?>

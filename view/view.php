@@ -18,11 +18,6 @@ if (isset($_POST['enviar'])){
         '$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','$data[7]'); ";
 
         echo $q;
-<<<<<<< HEAD
-	   //$connect->query($q); 
-=======
-	  
->>>>>>> b8998c16ed889648438d6ba736a3f9e622a5052f
        if ($connect->query($q)===true) {
         echo "Sisirvio";
         }
