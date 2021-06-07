@@ -13,8 +13,8 @@ if (isset($_POST['enviar'])){
      $handle = fopen($filename, "r");
  
      while( ($data = fgetcsv($handle, 1000, ";") ) !== FALSE ){
-        $q = "INSERT INTO empleado (codigo, codigoSucursal, nombres, apellidos,dependencia,cargo, fechaIngreso, sueldo) VALUES ('$data[0]', 
-         '$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','$data[7]'); ";
+        $q = "INSERT INTO sucursal (id, cod_Ciudad, cod_Empresa, direccion, teleforno, correo, estado) VALUES ('$data[0]', 
+         '$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]'); ";
  
          echo $q;
         if ($connect->query($q)===true) {
@@ -34,13 +34,11 @@ if (isset($_POST['enviar'])){
 <title>INICIO</title>
 </head>
 <body>
-<a  href="login.php"> Login</a> 
     <form enctype="multipart/form-data" method="post" action="">
     CSV File:<input type="file" name="file" id="file">
     <input type="submit" value="Enviar" name="enviar">
     </form>
     <h1>
-    <table></table>
     </h1>
 </body>
 </html>

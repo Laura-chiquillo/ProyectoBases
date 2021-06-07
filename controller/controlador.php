@@ -2,7 +2,7 @@
    
     #conección al modelo y funcionamiento de subir archivo
     function conectar(){
-        require_once 'conexion.php';
+        require_once('../model/conexion.php');
     }
-    
+
 ?>
