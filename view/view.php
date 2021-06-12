@@ -1,10 +1,10 @@
 <?php
 //require("../model/conexion.php")
 
-$connect = mysqli_connect("localhost","root","", "proyecto");
-//$conecectar = new Conexion();
-//$connect = $conec->conectar();
+include ("../model/conexion.php");
 
+$conectar1 = new Conexion(); 
+$conne = $conectar1 -> conectar();
 if (isset($_POST['enviar'])){
 	
    $filename=$_FILES["file"]["name"];
@@ -16,13 +16,12 @@ if (isset($_POST['enviar'])){
      $handle = fopen($filename, "r");
  
      while( ($data = fgetcsv($handle, 1000, ";") ) !== FALSE ){
-        $q = "INSERT INTO empleado (codigo, codigoSucursal, nombres, apellidos,dependencia,cargo, fechaIngreso, sueldo) VALUES ('$data[0]', 
-         '$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','$data[7]'); ";
+        $q = "INSERT INTO empleado (`codigo`, `cod_Sucursal`, `cod_Pension`,`cod_Salud` ,`cod_Arl` , `nombres`,`apellidos` ,`dependencia`,`cargo`, `fechaIngreso`, `sueldo`, `estado`) VALUES ('$data[0]', 
+         '$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','$data[7]','$data[8]','$data[9]','$data[10]','$data[11]')";
  
-        //echo $q;
-        if ($connect->query($q)===true) {
-         echo "Sisirvio";
-         }
+         echo $q;
+        
+         mysqli_query($conne,$q);
      }
  
        fclose($handle);
