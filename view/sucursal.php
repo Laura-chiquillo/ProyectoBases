@@ -68,14 +68,14 @@ nav ul li a{
         <ul>
         <a href="view.php?action=empleados">Empleados</a>
         <a href="sucursal.php?action=sucursal">Sucursal</a>
-        <a href="">Empresa</a>
-        <a href="">Arl</a>
-        <a href="">Ciudad sucursal</a>
-        <a href="">Concepto nomina</a>
-        <a href="">Novedad</a>
-        <a href="">Pension</a>
-        <a href="">Salud</a>
-        <a href="">Usuario</a>
+        <a href="empresa.php?action=empresa">Empresa</a>
+        <a href="arl.php?action=arl">Arl</a>
+        <a href="ciudadSucursal.php?action=ciudadSucursal">Ciudad sucursal</a>
+        <a href="conceptoNomina.php?action=conceptoNomia">Concepto nomina</a>
+        <a href="novedad.php?action=novedad">Novedad</a>
+        <a href="pension.php?action=pension">Pension</a>
+        <a href="salud.php?action=salud">Salud</a>
+        <a href="usuario.php?action=usuario">Usuario</a>
         <a  href="login.php"> Login</a>
         </ul>
     </nav>
