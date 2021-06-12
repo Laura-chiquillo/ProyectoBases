@@ -1,7 +1,10 @@
 <?php
+//require("../model/conexion.php")
 
-//$connect = mysqli_connect("192.168.1.7","root","erara6e4", "proyecto",3306);
+//include ("../model/conexion.php");
 
+//$conectar1 = new Conexion(); 
+//$conne = $conectar1 -> conectar();
 if (isset($_POST['enviar'])){
 	
    $filename=$_FILES["file"]["name"];
@@ -13,12 +16,12 @@ if (isset($_POST['enviar'])){
      $handle = fopen($filename, "r");
  
      while( ($data = fgetcsv($handle, 1000, ";") ) !== FALSE ){
-        $q = "INSERT INTO sucursal  VALUES ('$data[0]', '$data[1]','$data[2]','$data[3]', '$data[4]','$data[5]','$data[6]'); ";
+        $q = "INSERT INTO empresa VALUES ('$data[0]', 
+         '$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','$data[7]')";
  
          echo $q;
-        if ($connect->query($q)===true) {
-         echo "Sisirvio";
-         }
+        
+         mysqli_query($conne,$q);
      }
  
        fclose($handle);
@@ -68,14 +71,14 @@ nav ul li a{
         <ul>
         <a href="view.php?action=empleados">Empleados</a>
         <a href="sucursal.php?action=sucursal">Sucursal</a>
-        <a href="">Empresa</a>
-        <a href="">Arl</a>
-        <a href="">Ciudad sucursal</a>
-        <a href="">Concepto nomina</a>
-        <a href="">Novedad</a>
-        <a href="">Pension</a>
-        <a href="">Salud</a>
-        <a href="">Usuario</a>
+        <a href="empresa.php?action=empresa">Empresa</a>
+        <a href="arl.php?action=arl">Arl</a>
+        <a href="ciudadSucursal.php?action=ciudadSucursal">Ciudad sucursal</a>
+        <a href="conceptoNomina.php?action=conceptoNomia">Concepto nomina</a>
+        <a href="novedad.php?action=novedad">Novedad</a>
+        <a href="pension.php?action=pension">Pension</a>
+        <a href="salud.php?action=salud">Salud</a>
+        <a href="usuario.php?action=usuario">Usuario</a>
         <a  href="login.php"> Login</a>
         </ul>
     </nav>
