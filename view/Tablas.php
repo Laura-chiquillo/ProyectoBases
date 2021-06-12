@@ -9,6 +9,7 @@ $conexion=mysqli_connect("localhost","root","", "proyecto");
 </head>
 <body>
     <br>
+    <a  href="view.php"> atras</a> 
     <table border="1">
         <tr>
             <td>codigo</td>
