@@ -1,8 +1,7 @@
 <?php
-
 require('../fpdf/fpdf.php');
-require("../model/sucursales.php");
-require("../model/model.php");
+require('../model/sucursales.php');
+require('../model/model.php');
 
 class PDF extends FPDF{
     var $widths;

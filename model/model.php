@@ -1,7 +1,7 @@
 <?php 
 require_once 'conexion.php';
 
-class consulta extends Conexion(){
+class consulta extends Conexion{
 
     public $connect;
     public $data;
