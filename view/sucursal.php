@@ -1,6 +1,6 @@
 <?php
 
-$connect = mysqli_connect("localhost","root","", "proyecto");
+$connect = mysqli_connect("192.168.1.7","root","erara6e4", "proyecto",3306);
 
 if (isset($_POST['enviar'])){
 	
@@ -13,8 +13,7 @@ if (isset($_POST['enviar'])){
      $handle = fopen($filename, "r");
  
      while( ($data = fgetcsv($handle, 1000, ";") ) !== FALSE ){
-        $q = "INSERT INTO sucursal (id, cod_Ciudad, cod_Empresa, direccion, teleforno, correo, estado) VALUES ('$data[0]', 
-         '$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]'); ";
+        $q = "INSERT INTO pension  VALUES ('$data[0]', '$data[1]','$data[2]'); ";
  
          echo $q;
         if ($connect->query($q)===true) {
