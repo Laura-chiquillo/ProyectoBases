@@ -1,6 +1,9 @@
 <?php
+//require("../model/conexion.php")
 
 $connect = mysqli_connect("localhost","root","", "proyecto");
+//$conecectar = new Conexion();
+//$connect = $conec->conectar();
 
 if (isset($_POST['enviar'])){
 	
@@ -16,7 +19,7 @@ if (isset($_POST['enviar'])){
         $q = "INSERT INTO empleado (codigo, codigoSucursal, nombres, apellidos,dependencia,cargo, fechaIngreso, sueldo) VALUES ('$data[0]', 
          '$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','$data[7]'); ";
  
-         echo $q;
+        //echo $q;
         if ($connect->query($q)===true) {
          echo "Sisirvio";
          }
@@ -34,13 +37,12 @@ if (isset($_POST['enviar'])){
 <title>INICIO</title>
 </head>
 <body>
-<a  href="login.php"> Login</a> 
     <form enctype="multipart/form-data" method="post" action="">
     CSV File:<input type="file" name="file" id="file">
     <input type="submit" value="Enviar" name="enviar">
     </form>
-    <h1>
-    <table></table>
-    </h1>
+<a  href="login.php"> Login</a> 
+<a  href="Tablas.php"> tabla</a>
+
 </body>
 </html>
