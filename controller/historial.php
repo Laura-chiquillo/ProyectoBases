@@ -102,7 +102,6 @@ class PDF extends FPDF {
 
 }
 
-
 $usuaro_codigo = $_GET['id'];
 $objusuario = new Usuario();
 $usuario= $objusuario->usuario_id($usuaro_codigo);
