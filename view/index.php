@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +11,7 @@
     </form>
     </header>
     <?php
-    echo "<td><a href='../model/pdf.php'> <button type='button' class= 'btn btn-outline-success'>Acta PDF</button></a></td>";
+    echo "<td><a href='../controller/pdf.php'> <button type='button' class= 'btn btn-outline-success'>Acta PDF</button></a></td>";
     ?>
 </body>
 </html>
