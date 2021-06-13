@@ -118,7 +118,7 @@ class PDF_MySQL_Table extends FPDF {
         // Print header
         $this->TableHeader();
         // Print rows
-        $this->SetFont('Arial','',4);
+        $this->SetFont('Arial','',3.5);
         $this->ColorIndex=0;
         $this->ProcessingTable=true;
         while($row=mysqli_fetch_array($res))
