@@ -2,7 +2,7 @@
 class Conexion{
 public function conectar(){
 
-$servername ="192.168.1.7";
+$servername ="192.168.1.16";
 $database = "proyecto";
 $username = "root";
 $password = "erara6e4";
