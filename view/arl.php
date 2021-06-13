@@ -5,6 +5,7 @@
 
 //$conectar1 = new Conexion(); 
 //$conne = $conectar1 -> conectar();
+$conne = mysqli_connect ("localhost","root","","proyecto",3306);
 if (isset($_POST['enviar'])){
 	
    $filename=$_FILES["file"]["name"];
@@ -20,7 +21,7 @@ if (isset($_POST['enviar'])){
  
          echo $q;
         
-         mysqli_query($conne,$q);
+        mysqli_query($conne,$q);
      }
  
        fclose($handle);
