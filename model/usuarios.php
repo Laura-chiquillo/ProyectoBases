@@ -1,6 +1,6 @@
 <?php
 
-require_once 'conexion.php';
+require_once ('../model/conexion.php');
 
 class Usuarios extends Conexion{
 
@@ -25,7 +25,7 @@ class Usuarios extends Conexion{
     }
 
     public function usuario_id($id){
-        $consulta = sprintf("SELECT * FROM usuario WHERE id =%s",
+        $consulta = sprintf("SELECT * FROM usuario WHERE id=2",
         parent::comillas_inteligentes($id));
 
         $resultado = $this->mysqli->query($consulta);

@@ -1,32 +1,20 @@
 <?php
 
-require("../model/usuarios.php");
-
-$objusuario = new Usuarios();
-$usurios = $objusuario->usuario();
-
-if (sizeof($usuarios) > 0) {
-    ?>
-    <table id="usuario" class="display table table-bordered table-stripe" cellspacing="0" width="100%">
-    <thead>
-    <tr>
-    <th>nombre usuario</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    foreach($usuarios as $row){
-        ?>
-        <tr>
-        <td><?php echo $row['username']; ?> </td>
-        </tr>
-        <?php
-    }
-    ?>
-    </tbody>
-    </table>
-    <?php
-} else {
-    echo "no hay resultados.....";
-}
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>INICIO</title>
+</head>
+<body>
+<header>
+    <form enctype="multipart/form-data" method="post" action="">
+    <input type="submit" value="pdf" name="pdf">
+    </form>
+    </header>
+    <?php
+    echo "<td><a href='../model/pdf.php'> <button type='button' class= 'btn btn-outline-success'>Acta PDF</button></a></td>";
+    ?>
+</body>
+</html>
