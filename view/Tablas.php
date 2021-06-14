@@ -9,6 +9,7 @@ $conexion=mysqli_connect("192.168.1.7","root","erara6e4", "proyecto",3306);
 </head>
 <body>
     <br>
+    <a  href="view.php"> atras</a> 
     <table border="1">
         <tr>
             <td>codigo</td>
