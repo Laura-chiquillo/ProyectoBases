@@ -3,8 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <title>INICIO</title>
+
+<style>
+
+header{
+    position: relative;
+    margin:auto;
+    text-align:center;
+    padding:5px;
+}
+table{
+    position: relative;
+    margin:auto;
+    text-align:center;
+    padding:5px;
+}
+</style>
 </head>
 <body>
+    <header>
+            <a  href="login.php"> 
+                <button type='button' class= 'btn btn-outline-success'>inicio</button>
+            </a>
+    </header>
+
     <table id="theTable" class="display" border="1" style="width: 50%">
     <tfoot>
         <tr>
@@ -49,6 +71,5 @@
         </tr>
     </tfoot>
 </table>
-<a  href="login.php"> Login</a>
 </body>
 </html>
