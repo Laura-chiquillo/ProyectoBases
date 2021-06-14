@@ -1,10 +1,10 @@
 <?php
 //require("../model/conexion.php")
 
-//include ("../model/conexion.php");
+include ("../model/conexion.php");
 
-//$conectar1 = new Conexion(); 
-//$conne = $conectar1 -> conectar();
+$conectar1 = new Conexion(); 
+$conne = $conectar1 -> conectar();
 if (isset($_POST['enviar'])){
 	
    $filename=$_FILES["file"]["name"];
