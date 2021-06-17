@@ -5,6 +5,9 @@ include ("../model/conexion.php");
 
 $conectar1 = new Conexion(); 
 $conne = $conectar1 -> conectar();
+//$conne = mysqli_connect ("localhost","root","","proyecto",3306);
+//$conne = mysqli_connect ("192.168.1.16","root","erara6e4","proyecto",3306);
+
 if (isset($_POST['enviar'])){
 	
    $filename=$_FILES["file"]["name"];

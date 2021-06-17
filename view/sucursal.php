@@ -1,6 +1,9 @@
 <?php
 
-$connect = mysqli_connect("192.168.1.16","root","erara6e4", "proyecto",3306);
+include ("../model/conexion.php");
+
+$conectar1 = new Conexion(); 
+$connect = $conectar1 -> conectar();
 
 if (isset($_POST['enviar'])){
 	
@@ -123,24 +126,3 @@ nav ul li a{
 </body>
 </html>
 
-ConsultarUsuario($_POST['Username'] , $_POST['password']);
-    //verifico los espacios es blanco
-    function ConsultarUsuario($username,$password){
-    include ("../model/conexion.php");
-    $sentencia = "SELECT * FROM usuario WHERE username='".$username."'AND password='".$password."'";
-    $resultado = $conn-> query($sentencia) or die ("Error al comprobar usuario:".mysqli_error($conn));
-
-    $count = mysqli_num_rows($resultado);
-    if($count>0){
-      echo '<script>';
-      echo 'alert("Bienvenido!!")';
-      echo 'location.inicio.php';
-      echo '</script>';
-    }
-    else{
-        echo '<script>';
-        echo 'alert("Datos incorrectos"!!)';
-        echo 'location.inicio.php';
-        echo '</script>';
-    }
-}
