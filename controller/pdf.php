@@ -16,7 +16,7 @@ class PDF extends PDF_MySQL_Table{
 }
 
 // Connect to database
-$link = mysqli_connect ("192.168.1.19","root","erara6e4","proyecto",3306);
+$link = mysqli_connect ("192.168.1.14","root","erara6e4","proyecto",3306);
 
 $pdf = new PDF();
 $pdf->AddPage();
