@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>INICIO</title>
-<<<<<<< HEAD
 <style>
     
     body{
@@ -53,33 +52,6 @@ tr:hover td{
 <body>
     
     <table id="theTable" class="display" border="0" style="width: 50%">
-=======
-
-<style>
-
-header{
-    position: relative;
-    margin:auto;
-    text-align:center;
-    padding:5px;
-}
-table{
-    position: relative;
-    margin:auto;
-    text-align:center;
-    padding:5px;
-}
-</style>
-</head>
-<body>
-    <header>
-            <a  href="login.php"> 
-                <button type='button' class= 'btn btn-outline-success'>inicio</button>
-            </a>
-    </header>
-
-    <table id="theTable" class="display" border="1" style="width: 50%">
->>>>>>> 0d2f915aabcb80fea3555a24f415bb4758a3bc74
     <tfoot>
         <tr>
             <th>Empleados por ciudad y sucursal.</th>
