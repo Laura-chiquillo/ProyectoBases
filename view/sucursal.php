@@ -36,6 +36,47 @@ if (isset($_POST['enviar'])){
 <meta charset="UTF-8">
 <title>INICIO</title>
 <style>
+    
+     body{
+	background-color: #435165;
+	font-family: Arial;
+}
+
+#main-container{
+	margin: 150px auto;
+	width: 30px;
+}
+
+table{
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+   border: 1px solid #999;
+   text-align: left;
+   border-collapse: collapse;
+   margin: 1 0 1em 0;
+   caption-side: top;
+
+}
+
+th, td{
+	padding: 20px;
+}
+
+thead{
+	background-color: #3274d6;
+	border-bottom: solid 5px #0F362D;
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: #3274d6;
+	color: white;
+}
 header{
     position: relative;
     margin:auto;
@@ -57,8 +98,8 @@ nav ul{
 }
 nav ul li{
     display:inline-block;
-    width:24%;
-    line-height: 50px;
+    width:10%;
+    line-height: 60px;
     list-style: none;
 }
 nav ul li a{
@@ -69,18 +110,18 @@ nav ul li a{
 </head>
 <body>
     <nav>
-        <ul>
-        <a href="view.php?action=empleados">Empleados</a>
-        <a href="sucursal.php?action=sucursal">Sucursal</a>
-        <a href="empresa.php?action=empresa">Empresa</a>
-        <a href="arl.php?action=arl">Arl</a>
-        <a href="ciudadSucursal.php?action=ciudadSucursal">Ciudad sucursal</a>
-        <a href="conceptoNomina.php?action=conceptoNomia">Concepto nomina</a>
-        <a href="novedad.php?action=novedad">Novedad</a>
-        <a href="pension.php?action=pension">Pension</a>
-        <a href="salud.php?action=salud">Salud</a>
-        <a href="usuario.php?action=usuario">Usuario</a>
-        <a  href="login.php"> Login</a>
+    <ul>
+        <li><a href="view.php?action=empleados">Empleados</a></li>
+        <li><a href="sucursal.php?action=sucursal">Sucursal</a></li>
+        <li><a href="empresa.php?action=empresa">Empresa</a></li>
+        <li><a href="arl.php?action=arl">Arl</a></li>
+        <li><a href="ciudadSucursal.php?action=ciudadSucursal">Ciudad sucursal</a></li>
+        <li><a href="conceptoNomina.php?action=conceptoNomia">Concepto nomina</a></li>
+        <li><a href="novedad.php?action=novedad">Novedad</a></li>
+        <li><a href="pension.php?action=pension">Pension</a></li>
+        <li><a href="salud.php?action=salud">Salud</a></li>
+        <li><a href="usuario.php?action=usuario">Usuario</a></li>
+        <li><a  href="login.php"> Login</a>
         </ul>
     </nav>
     <header>
@@ -101,20 +142,28 @@ nav ul li a{
     <br>
     <table border="1">
         <tr>
-            <td>ID</td>
-            <td>Descripcion Pension</td>
-            <td>Estado</td>
-        </tr>
+            <td>id</td>
+            <td>cod_Ciudad</td>
+            <td>cod_Empresa</td>
+            <td>Direccion</td>
+            <td>Telefono</td>
+            <td>Correo</td>
+            <td>Escala</td>
         <?php
-        $sql = " SELECT * from pension";
+        $sql = " SELECT * from sucursal";
         $result= mysqli_query($connect, $sql);
         
         while($mostrar= mysqli_fetch_array($result)){
         ?>
         <tr>
         <td><?php echo $mostrar ['id']?></td>
-        <td><?php echo $mostrar ['desc_pension']?></td>
+        <td><?php echo $mostrar ['cod_Ciudad']?></td>
+        <td><?php echo $mostrar ['cod_Empresa']?></td>
+        <td><?php echo $mostrar ['direccion']?></td>
+        <td><?php echo $mostrar ['telefono']?></td>
+        <td><?php echo $mostrar ['correo']?></td>
         <td><?php echo $mostrar ['estado']?></td>
+        
         </tr>
     <?php
 

@@ -1,11 +1,11 @@
 <?php
-//require("../model/conexion.php")
+
 
 include ("../model/conexion.php");
 
 $conectar1 = new Conexion(); 
 $conne = $conectar1 -> conectar();
-//$conne = mysqli_connect ("","root","erara6e4","proyecto",3306);
+
 
 if (isset($_POST['enviar'])){
 	
@@ -36,6 +36,46 @@ if (isset($_POST['enviar'])){
 <meta charset="UTF-8">
 <title>INICIO</title>
 <style>
+ body{
+	background-color: #435165;
+	font-family: Arial;
+}
+
+#main-container{
+	margin: 150px auto;
+	width: 30px;
+}
+
+table{
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+   border: 1px solid #999;
+   text-align: left;
+   border-collapse: collapse;
+   margin: 1 0 1em 0;
+   caption-side: top;
+
+}
+
+th, td{
+	padding: 20px;
+}
+
+thead{
+	background-color: #3274d6;
+	border-bottom: solid 5px #0F362D;
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: #3274d6;
+	color: white;
+}
 header{
     position: relative;
     margin:auto;
@@ -52,13 +92,13 @@ nav{
 nav ul{
     position:relative;
     margin:auto;
-    width:50%;
+    width:100%;
     text-align:center;
 }
 nav ul li{
     display:inline-block;
-    width:15%;
-    line-height: 50px;
+    width:10%;
+    line-height: 60px;
     list-style: none;
 }
 nav ul li a{
@@ -66,10 +106,7 @@ nav ul li a{
     text-decoration: none;
     
 }
-section{
-    position: relative;
-    padding: 100 px;
-}
+
 </style>
 </head>
 <body>
@@ -94,5 +131,55 @@ section{
     <input type="submit" value="Enviar" name="enviar">
     </form>
     </header>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8">  
+<title> BASE DE DATOS EMPLEADOS</title>
+</head>
+<body>
+    <br>
+    <table border="0">
+        <tr>
+            <td>codigo</td>
+            <td>cod_Sucursal</td>
+            <td>cod_Pension</td>
+            <td>cod_Salud</td>
+            <td>cod_Arl</td>
+            <td>nombres</td>
+            <td>apellidos</td>
+            <td>dependencia</td>
+            <td>cargo</td>
+            <td>fechaIngreso</td>
+            <td>sueldo</td>
+        </tr>
+        <?php
+        $sql = " SELECT * from empleado";
+        $result= mysqli_query($conne, $sql);
+        
+        while($mostrar= mysqli_fetch_array($result)){
+        ?>
+        <tr>
+        <td><?php echo $mostrar ['codigo']?></td>
+        <td><?php echo $mostrar ['cod_Sucursal']?></td>
+        <td><?php echo $mostrar ['cod_Pension']?></td>
+        <td><?php echo $mostrar ['cod_Salud']?></td>
+        <td><?php echo $mostrar ['cod_Arl']?></td>
+        <td><?php echo $mostrar ['nombres']?></td>
+        <td><?php echo $mostrar ['apellidos']?></td>
+        <td><?php echo $mostrar ['dependencia']?></td>
+        <td><?php echo $mostrar ['cargo']?></td>
+        <td><?php echo $mostrar ['fechaIngreso']?></td>
+        <td><?php echo $mostrar ['sueldo']?></td>
+        </tr>
+    <?php
+
+    }
+    ?>
+    </table>
+
+    </br>
 </body>
 </html>
