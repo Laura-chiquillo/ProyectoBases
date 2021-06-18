@@ -1,6 +1,7 @@
 <?php
 session_start();
 require("verificar.php");
+require("../controller/auditoria.php")
 ?>
 <!DOCTYPE html>
 <html>
