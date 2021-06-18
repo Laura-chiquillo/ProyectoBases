@@ -1,12 +1,12 @@
 <?php
 session_start();
-require("verificar.php");
+require("verificar2.php");
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Login Usuario</title>
+		<title>ADMIN</title>
 		
 		
 <style>
@@ -70,32 +70,31 @@ body {
   background-color: #2868c7;
     transition: background-color 0.2s;
 }
-
 </style>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	</head>
 	<body>
 	<div class="inicio">
-			<h1> Login Usuario </h1>
+			<h1> ADMIN </h1>
 			<form action="" method="POST">
 				<label for="username">
 					<i class="fas fa-user"></i>
 				</label>
-				<input type="text" placeholder="Ingrese su Usuario" id ="username" name ="form_username" required >
+				<input type="text" placeholder="Ingrese su Usuario" id ="username" name ="username" required >
 				<label for="password">
 					<i class="fas fa-lock"></i>
 				</label>
-				<input type="password" placeholder="Ingrese la contraseña" id="password" name ="form_password"required>
+				<input type="password" placeholder="Ingrese la contraseña" id="password" name ="password"required>
 				<input type="submit" value="Login">
-                
                 <?php
    					if(isset($error_message)){
     				  echo '<div class="$error_message">'.$error_message.'</div>';
    }
 ?>
 			</form>
-            <a  href="Admin.php"> ADMIN</a>
+            <a  href="login.php"> USUARIOS</a>
 		</div>
+                
 
 	</body>
 </html>

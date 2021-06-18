@@ -1,11 +1,11 @@
 <?php
 //require("../model/conexion.php")
 
-//include ("../model/conexion.php");
+include ("../model/conexion.php");
 
-//$conectar1 = new Conexion(); 
-//$conne = $conectar1 -> conectar();
-$conne = mysqli_connect ("localhost","root","","proyecto",3306);
+$conectar1 = new Conexion(); 
+$conne = $conectar1 -> conectar();
+//$conne = mysqli_connect ("localhost","root","","proyecto",3306);
 if (isset($_POST['enviar'])){
 	
    $filename=$_FILES["file"]["name"];
