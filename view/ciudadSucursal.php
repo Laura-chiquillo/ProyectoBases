@@ -118,6 +118,7 @@ nav ul li a{
         <li><a href="novedad.php?action=novedad">Novedad</a></li>
         <li><a href="pension.php?action=pension">Pension</a></li>
         <li><a href="salud.php?action=salud">Salud</a></li>
+        <li><a href="mostraraud.php?action=auditoria">Auditoria</a></li>
         <li><a href="usuario.php?action=usuario">Usuario</a></li>
         <li><a  href="login.php"> Login</a>
         </ul>

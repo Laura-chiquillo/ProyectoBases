@@ -1,6 +1,6 @@
 <?php
 session_start();
-//require("../controller/auditoria.php");
+require("../controller/auditoria.php");
 require("verificar.php");
 
 ?>

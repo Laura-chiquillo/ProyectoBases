@@ -1,3 +1,7 @@
+<?php
+if (isset($_POST['enviar'])){
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,30 +59,49 @@ tr:hover td{
     <tfoot>
         <tr>
             <th>Empleados por ciudad y sucursal.</th>
+            <th></th>
+
             <th>
-                <?php
-                echo "<td><a href='../controller/pdf.php'> <button type='button' class= 'btn btn-outline-success'>PDF</button></a></td>";
-                ?>
+                
+                <form action="../controller/pdf.php" method="POST">
+                <select name ='ciudad'>
+                <option value="Bogota">Bogota</a></option>
+                <option value="Cali">Cali</option>
+                 <option value="Barranquilla">Barranquilla</option>
+                 <option value="Pereira">Pereira</option>
+                 <option value="Medellin">Medellin</option>
+                <option value="Armenia">Armenia</option>
+                 <option value="Neiva">Neiva</option>
+                 <option value="Ibague">Ibague</option>
+                 <option value="Cartagena">Cartagena</option>
+                 <option value="Popayan">Popayan</option>
+        </select>
+       
+            </th>
+            <th>
+            
+           <input type="submit" value="PDF">
+            
             </th>
         </tr>
         <tr>
             <th>Sumatoria de sueldos pagados por sucursal en un período determinado.</th>
+            <th></th>
+            <th></th>
             <th> 
-                <?php
-                echo "<td><a href='../controller/consulta2.php'> <button type='button' class= 'btn btn-outline-success'>PDF</button></a></td>";
-                ?>
-            </th>
+           <a href="consu.html">ID</a>
         </tr>
         <tr>
             <th>Empleados que presente su código, nombre, sueldo, descuento por pensión (es el 4% del valor del sueldo), bonificación y total recibido.</th>
+            <th></th>
+            <th></th>
             <th> 
-                <?php
-                echo "<td><a href='../controller/consulta3.php'> <button type='button' class= 'btn btn-outline-success'>PDF</button></a></td>";
-                ?>
+               <a href="consu2.html">codigo</a>
             </th>
         </tr>
         <tr>
             <th>Empleados en un rango de fechas que hayan tenido alguna novedad.</th>
+            <th></th>
             <th> 
                 <?php
                 echo "<td><a href='../controller/consulta4.php'> <button type='button' class= 'btn btn-outline-success'>PDF</button></a></td>";
@@ -86,6 +109,9 @@ tr:hover td{
             </th>
         </tr>
         <tr>
+            <th>
+                    Registro de auditoria
+            </th>
             <th></th>
             <th> 
                 <?php

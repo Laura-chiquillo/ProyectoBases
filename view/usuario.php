@@ -108,7 +108,7 @@ nav ul li a{
 <body>
     <nav>
     <ul>
-        <li><a href="view.php?action=empleados">Empleados</a></li>
+    <li><a href="view.php?action=empleados">Empleados</a></li>
         <li><a href="sucursal.php?action=sucursal">Sucursal</a></li>
         <li><a href="empresa.php?action=empresa">Empresa</a></li>
         <li><a href="arl.php?action=arl">Arl</a></li>
@@ -117,6 +117,7 @@ nav ul li a{
         <li><a href="novedad.php?action=novedad">Novedad</a></li>
         <li><a href="pension.php?action=pension">Pension</a></li>
         <li><a href="salud.php?action=salud">Salud</a></li>
+        <li><a href="mostraraud.php?action=auditoria">Auditoria</a></li>
         <li><a href="usuario.php?action=usuario">Usuario</a></li>
         <li><a  href="login.php"> Login</a>
         </ul>

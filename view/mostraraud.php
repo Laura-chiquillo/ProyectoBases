@@ -1,32 +1,7 @@
 <?php
-
 include ("../model/conexion.php");
-
 $conectar1 = new Conexion(); 
 $conne = $conectar1 -> conectar();
-
-
-if (isset($_POST['enviar'])){
-	
-   $filename=$_FILES["file"]["name"];
-   $info = new SplFileInfo($filename);
-   $extension = pathinfo($info->getFilename(), PATHINFO_EXTENSION);
- 
-    if($extension == 'csv')   {
-     $filename = $_FILES['file']['tmp_name'];
-     $handle = fopen($filename, "r");
- 
-     while( ($data = fgetcsv($handle, 1000, ";") ) !== FALSE ){
-        $q = "INSERT INTO pension VALUES ('$data[0]','$data[1]','$data[2]')";
- 
-         echo $q;
-        
-         mysqli_query($conne,$q);
-     }
- 
-       fclose($handle);
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -108,8 +83,9 @@ nav ul li a{
 </head>
 <body>
     <nav>
-    <ul>
-    <li><a href="view.php?action=empleados">Empleados</a></li>
+        <ul>
+        
+        <li><a href="view.php?action=empleados">Empleados</a></li>
         <li><a href="sucursal.php?action=sucursal">Sucursal</a></li>
         <li><a href="empresa.php?action=empresa">Empresa</a></li>
         <li><a href="arl.php?action=arl">Arl</a></li>
@@ -121,14 +97,9 @@ nav ul li a{
         <li><a href="mostraraud.php?action=auditoria">Auditoria</a></li>
         <li><a href="usuario.php?action=usuario">Usuario</a></li>
         <li><a  href="login.php"> Login</a>
+      
         </ul>
     </nav>
-    <header>
-    <form enctype="multipart/form-data" method="post" action="">
-    CSV File:<input type="file" name="file" id="file">
-    <input type="submit" value="Enviar" name="enviar">
-    </form>
-    </header>
 </body>
 </html>
 <!DOCTYPE html>
@@ -142,20 +113,26 @@ nav ul li a{
     <table border="1">
         <tr>
             <td>ID</td>
-            <td>Descripcion Pension</td>
-            <td>Estado</td>
+            <td>Fecha Auditoria</td>
+            <td>Usuario Auditoria</td>
+            <td>Accion Audotoria</td>
+            <td>Observacion Auditoria</td>
+            <td>ip</td>
         </tr>
         <?php
-        $sql = " SELECT * from pension";
+        $sql = " SELECT * from auditoria";
         $result= mysqli_query($conne, $sql);
         
         while($mostrar= mysqli_fetch_array($result)){
         ?>
         <tr>
         <td><?php echo $mostrar ['id']?></td>
-        <td><?php echo $mostrar ['desc_pension']?></td>
-        <td><?php echo $mostrar ['estado']?></td>
-        </tr>
+        <td><?php echo $mostrar ['fcha_audtria']?></td>
+        <td><?php echo $mostrar ['usrio_audtria']?></td>
+        <td><?php echo $mostrar ['accion_audtria']?></td>
+        <td><?php echo $mostrar ['obsrvcion_audtria']?></td>
+        <td><?php echo $mostrar ['address_audtria']?></td>
+    </tr>
     <?php
 
     }
